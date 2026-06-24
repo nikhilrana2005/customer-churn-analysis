@@ -1,0 +1,217 @@
+WEEK 2 FINAL REPORT
+
+Project Title: Telco Customer Churn Analysis
+
+Week Objective:
+The primary objective of Week 2 was to perform Feature Engineering and Machine Learning Model Development to identify customers who are likely to churn and understand the key factors influencing customer retention.
+
+==================================================
+DAY 1: BASIC FEATURE ENGINEERING
+================================
+
+Tasks Completed:
+
+* Created RevenuePerMonth feature
+* Created ChargeRatio feature
+* Created HighValueCustomer feature
+* Saved feature engineered dataset
+
+Purpose:
+To generate additional business-relevant variables that could improve model performance and provide deeper customer insights.
+
+Outcome:
+Three new features were successfully added to the dataset, improving the quality of customer profiling and analytical capabilities.
+
+==================================================
+DAY 2: CUSTOMER SEGMENTATION
+============================
+
+Tasks Completed:
+
+* Created TenureGroup feature
+* Created ContractRisk feature
+* Created CustomerLifetimeValue feature
+
+Purpose:
+To classify customers into meaningful business segments based on tenure, contract type, and overall value.
+
+Outcome:
+Customer segmentation features were successfully created, enabling better understanding of customer behavior and retention patterns.
+
+==================================================
+DAY 3: ADVANCED FEATURE ENGINEERING
+===================================
+
+Tasks Completed:
+
+* Created ChargesPerTenure feature
+* Created ServiceUsageScore feature
+* Created RiskCategory feature
+* Applied categorical encoding
+* Prepared final machine learning dataset
+
+Purpose:
+To capture customer service engagement, spending behavior, and risk levels for predictive modeling.
+
+Outcome:
+A final machine-learning-ready dataset containing 43 features was successfully prepared.
+
+==================================================
+DAY 4: LOGISTIC REGRESSION MODEL
+================================
+
+Model Performance:
+
+Accuracy: 80.38%
+
+Confusion Matrix:
+[[916 117]
+[159 215]]
+
+Classification Metrics:
+
+Precision: 65%
+Recall: 57%
+F1-Score: 61%
+
+Key Findings:
+
+* Logistic Regression achieved the highest overall performance.
+* The model correctly identified 215 churned customers.
+* Recall score indicates strong churn detection capability.
+* Established a reliable baseline model for comparison.
+
+==================================================
+DAY 5: RANDOM FOREST MODEL
+==========================
+
+Model Performance:
+
+Accuracy: 78.54%
+
+Confusion Matrix:
+[[918 115]
+[187 187]]
+
+Classification Metrics:
+
+Precision: 62%
+Recall: 50%
+F1-Score: 55%
+
+Key Findings:
+
+* Random Forest performed slightly lower than Logistic Regression.
+* Churn detection capability was reduced.
+* Additional tuning may improve performance.
+
+==================================================
+DAY 6: XGBOOST MODEL
+====================
+
+Model Performance:
+
+Accuracy: 78.75%
+
+Confusion Matrix:
+[[911 122]
+[177 197]]
+
+Classification Metrics:
+
+Precision: 62%
+Recall: 53%
+F1-Score: 57%
+
+Top Important Features:
+
+1. ContractRisk
+2. InternetService_Fiber optic
+3. InternetService_No
+4. Contract_Two year
+5. Contract_One year
+6. tenure
+7. OnlineSecurity_Yes
+8. PaymentMethod_Electronic check
+9. StreamingTV_Yes
+10. MultipleLines_Yes
+
+Key Findings:
+
+* XGBoost provided valuable feature importance insights.
+* Contract type emerged as the strongest churn indicator.
+* Internet service type significantly impacts churn behavior.
+
+==================================================
+DAY 7: MODEL COMPARISON & BUSINESS INSIGHTS
+===========================================
+
+Model Comparison:
+
+Logistic Regression:
+Accuracy = 80.38%
+
+Random Forest:
+Accuracy = 78.54%
+
+XGBoost:
+Accuracy = 78.75%
+
+Best Performing Model:
+Logistic Regression
+
+Reason:
+
+* Highest Accuracy
+* Highest Recall
+* Highest F1-Score
+* Better overall churn prediction performance
+
+==================================================
+BUSINESS INSIGHTS
+=================
+
+Key Churn Drivers:
+
+1. Contract Risk
+   Customers with shorter contracts are more likely to churn.
+
+2. Fiber Optic Internet Service
+   Customers using Fiber Optic services show higher churn tendencies.
+
+3. Customer Tenure
+   Newer customers are more likely to leave compared to long-term customers.
+
+4. Payment Method
+   Customers using Electronic Check demonstrate higher churn rates.
+
+5. Security & Support Services
+   Customers without Online Security and Technical Support are more likely to churn.
+
+==================================================
+RECOMMENDATIONS
+===============
+
+1. Promote long-term contracts through discounts and loyalty rewards.
+
+2. Target high-risk customers with personalized retention campaigns.
+
+3. Encourage customers to adopt Online Security and Technical Support services.
+
+4. Monitor Fiber Optic customers closely and improve service quality.
+
+5. Offer incentives for automatic payment methods to reduce churn.
+
+==================================================
+CONCLUSION
+==========
+
+Week 2 successfully transformed the raw customer dataset into an advanced machine learning dataset through feature engineering and customer segmentation.
+
+Three machine learning models were developed and evaluated. Logistic Regression achieved the best overall performance with an accuracy of 80.38%.
+
+The analysis identified contract type, tenure, internet service, payment method, and support services as the most influential factors affecting customer churn.
+
+The findings provide actionable insights that can help telecom companies improve customer retention strategies and reduce churn rates.
+
+WEEK 2 STATUS: COMPLETED SUCCESSFULLY
