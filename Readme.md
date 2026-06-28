@@ -260,38 +260,271 @@ Reason:
 
 ---
 
+
+
+# 📅 Week 3: Customer Lifetime Value (LTV) Prediction & FastAPI Deployment
+
+## Objectives
+
+* Prepare Customer Lifetime Value (LTV) dataset
+* Build regression models for LTV prediction
+* Evaluate regression performance
+* Deploy trained model using FastAPI
+* Develop REST APIs for single and batch predictions
+* Create API documentation using Swagger UI
+
+---
+
+## Day 1: Customer Lifetime Value (LTV) Preparation
+
+### Tasks Completed
+
+* Created Customer Lifetime Value (LTV) target variable
+* Prepared regression-ready dataset
+* Verified data quality
+* Saved processed dataset for model training
+
+### Dataset Summary
+
+**Rows:** 7032
+
+**Features:** 44
+
+---
+
+## Day 2: Linear Regression Model
+
+### Results
+
+| Metric   | Value  |
+| -------- | ------ |
+| MAE      | 0.00   |
+| RMSE     | 0.00   |
+| R² Score | 1.0000 |
+
+### Outcome
+
+* Successfully trained a Linear Regression model for Customer Lifetime Value prediction.
+* Generated prediction results and saved the trained model.
+
+---
+
+## Day 3: Random Forest Regression
+
+### Results
+
+| Metric   | Value  |
+| -------- | ------ |
+| MAE      | 1.19   |
+| RMSE     | 2.17   |
+| R² Score | 1.0000 |
+
+### Outcome
+
+* Built a Random Forest Regression model.
+* Compared regression performance with Linear Regression.
+* Saved trained model using Joblib.
+* Generated prediction dataset for evaluation.
+
+---
+
+## Day 4: FastAPI Project Setup
+
+### Tasks Completed
+
+* Installed FastAPI
+* Installed Uvicorn
+* Created REST API application
+* Loaded trained Machine Learning model
+* Verified API functionality
+* Configured Swagger Documentation
+
+### Deliverables
+
+* FastAPI application
+* Interactive API documentation
+* Model loading system
+
+---
+
+## Day 5: Single Customer Prediction API
+
+### Features Implemented
+
+* Created `/predict` endpoint
+* Accepted customer information through JSON
+* Performed Customer Lifetime Value prediction
+* Returned prediction as JSON response
+* Tested successfully using Swagger UI
+
+### Sample API Response
+
+```json
+{
+    "Predicted_LTV": 20.62
+}
+```
+
+---
+
+## Day 6: Batch Prediction API
+
+### Features Implemented
+
+* Created `/batch_predict` endpoint
+* CSV file upload support
+* Batch prediction for multiple customers
+* Generated prediction output file
+* Successfully processed all 7032 customer records
+
+### Output
+
+* batch_predictions.csv
+
+---
+
+## Day 7: API Testing & Deployment Readiness
+
+### Tasks Completed
+
+* Tested all REST API endpoints
+* Added file validation
+* Added exception handling
+* Enabled downloadable CSV output
+* Completed API documentation
+* Verified end-to-end workflow
+
+### API Endpoints
+
+| Method | Endpoint       | Description                        |
+| ------ | -------------- | ---------------------------------- |
+| GET    | /              | API Health Check                   |
+| POST   | /predict       | Predict LTV for a Single Customer  |
+| POST   | /batch_predict | Predict LTV for Multiple Customers |
+
+---
+
+# 📈 Week 3 Business Impact
+
+The Customer Lifetime Value prediction system enables businesses to estimate the future value of each customer, helping management prioritize retention efforts and marketing investments.
+
+### Benefits
+
+* Identify high-value customers
+* Improve customer retention strategy
+* Support personalized marketing campaigns
+* Estimate future customer revenue
+* Automate prediction through REST APIs
+* Enable integration with web and dashboard applications
+
+---
+
+# 🚀 Week 3 Achievements
+
+✅ Customer Lifetime Value Dataset Created
+
+✅ Linear Regression Model Developed
+
+✅ Random Forest Regression Model Developed
+
+✅ FastAPI REST API Built
+
+✅ Single Customer Prediction API
+
+✅ Batch Prediction API
+
+✅ Swagger Documentation
+
+✅ Model Deployment Ready
+
+
+# 📂 Project Structure
+
 # 📂 Project Structure
 
 ```text
 customer-churn-analysis/
 │
 ├── data/
+│   ├── Telco-Customer-Churn.csv
+│   ├── cleaned_telco_data.csv
+│   ├── feature_engineered_data.csv
+│   ├── ltv_dataset.csv
+│   └── batch_predictions.csv
+│
+├── models/
+│   ├── logistic_regression.pkl
+│   ├── random_forest_model.pkl
+│   ├── xgboost_model.pkl
+│   ├── linear_regression_ltv.pkl
+│   ├── random_forest_ltv.pkl
+│   └── feature_columns.pkl
+│
+├── reports/
+│   ├── week1_report.md
+│   ├── week2_final_report.txt
+│   ├── week3_report.md
+│   ├── week2_day2_results.txt
+│   ├── week2_day5_results.txt
+│   ├── week2_day6_results.txt
+│   ├── week3_day2_results.txt
+│   └── week3_day3_results.txt
+│
+├── predictions/
+│   ├── linear_regression_predictions.csv
+│   ├── random_forest_predictions.csv
+│   └── batch_predictions.csv
+│
+├── api/
+│   └── app.py
+│
 ├── week1/
+│   ├── load_data.py
+│   ├── data_quality.py
+│   ├── data_cleaning.py
+│   ├── exploratory_data_analysis.py
+│   ├── churn_analysis.py
+│   └── data_preparation.py
+│
 ├── week2/
+│   ├── week2_day1_feature_engineering.py
+│   ├── week2_day2_feature_engineering.py
+│   ├── week2_day3_feature_engineering.py
+│   ├── week2_day4_logistic_regression.py
+│   ├── week2_day5_random_forest.py
+│   ├── week2_day6_xgboost.py
+│   └── week2_day7_model_comparison.py
 │
-├── week2_day1_feature_engineering.py
-├── week2_day2_feature_engineering.py
-├── week2_day3_feature_engineering.py
+├── week3/
+│   ├── week3_day1_ltv_preparation.py
+│   ├── week3_day2_linear_regression.py
+│   ├── week3_day3_random_forest_regression.py
+│   ├── week3_day5_save_features.py
+│   └── app.py
 │
-├── week2_day4_logistic_regression.py
-├── week2_day5_random_forest.py
-├── week2_day6_xgboost.py
-│
-├── week2_final_report.txt
 ├── README.md
-│
-└── requirements.txt
+├── requirements.txt
+├── .gitignore
+└── LICENSE
 ```
+
+
+
+
 
 ---
 
 # 📌 Current Progress
 
-✅ Week 1 Completed
+# 📌 Current Progress
 
-✅ Week 2 Completed
+✅ Week 1 Completed – Data Understanding & EDA
 
-🚀 Week 3: Power BI Dashboard Development (Next Phase)
+✅ Week 2 Completed – Feature Engineering & Churn Prediction Models
+
+✅ Week 3 Completed – Customer Lifetime Value Prediction & FastAPI Deployment
+
+🚀 Week 4 – Power BI Dashboard Development & Project Deployment (Next Phase)
 
 ---
 
