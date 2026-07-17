@@ -438,101 +438,214 @@ The Customer Lifetime Value prediction system enables businesses to estimate the
 ✅ Model Deployment Ready
 
 
-# 📂 Project Structure
 
-# 📂 Project Structure
 
-```text
-customer-churn-analysis/
-│
-├── data/
-│   ├── Telco-Customer-Churn.csv
-│   ├── cleaned_telco_data.csv
-│   ├── feature_engineered_data.csv
-│   ├── ltv_dataset.csv
-│   └── batch_predictions.csv
-│
-├── models/
-│   ├── logistic_regression.pkl
-│   ├── random_forest_model.pkl
-│   ├── xgboost_model.pkl
-│   ├── linear_regression_ltv.pkl
-│   ├── random_forest_ltv.pkl
-│   └── feature_columns.pkl
-│
-├── reports/
-│   ├── week1_report.md
-│   ├── week2_final_report.txt
-│   ├── week3_report.md
-│   ├── week2_day2_results.txt
-│   ├── week2_day5_results.txt
-│   ├── week2_day6_results.txt
-│   ├── week3_day2_results.txt
-│   └── week3_day3_results.txt
-│
-├── predictions/
-│   ├── linear_regression_predictions.csv
-│   ├── random_forest_predictions.csv
-│   └── batch_predictions.csv
-│
-├── api/
-│   └── app.py
-│
-├── week1/
-│   ├── load_data.py
-│   ├── data_quality.py
-│   ├── data_cleaning.py
-│   ├── exploratory_data_analysis.py
-│   ├── churn_analysis.py
-│   └── data_preparation.py
-│
-├── week2/
-│   ├── week2_day1_feature_engineering.py
-│   ├── week2_day2_feature_engineering.py
-│   ├── week2_day3_feature_engineering.py
-│   ├── week2_day4_logistic_regression.py
-│   ├── week2_day5_random_forest.py
-│   ├── week2_day6_xgboost.py
-│   └── week2_day7_model_comparison.py
-│
-├── week3/
-│   ├── week3_day1_ltv_preparation.py
-│   ├── week3_day2_linear_regression.py
-│   ├── week3_day3_random_forest_regression.py
-│   ├── week3_day5_save_features.py
-│   └── app.py
-│
-├── README.md
-├── requirements.txt
-├── .gitignore
-└── LICENSE
+
+
+---
+
+# 📅 Week 4: Docker Containerization, GitHub Integration & Deployment
+
+## Objectives
+
+- Containerize the FastAPI application using Docker
+- Build and manage Docker images
+- Run the application inside Docker containers
+- Test API endpoints through Swagger UI
+- Version control using Git & GitHub
+- Prepare the project for deployment
+
+---
+
+## Day 1: Docker Setup
+
+### Tasks Completed
+
+- Installed Docker Desktop
+- Configured Docker Engine
+- Verified Docker installation
+- Pulled the official Python Docker image
+
+---
+
+## Day 2: Dockerfile Creation
+
+### Tasks Completed
+
+- Created Dockerfile
+- Configured Python runtime
+- Installed project dependencies
+- Exposed FastAPI port
+
+---
+
+## Day 3: Docker Image Build
+
+### Tasks Completed
+
+- Built Docker Image
+- Verified image creation
+- Managed Docker images
+
+Image Name:
+
+```
+churn-api
 ```
 
+---
 
+## Day 4: Docker Container Execution
 
+### Tasks Completed
 
+- Created Docker container
+- Mapped application port
+- Successfully launched FastAPI inside Docker
+
+Container Status:
+
+✅ Running Successfully
 
 ---
 
-# 📌 Current Progress
+## Day 5: API Testing using Swagger
 
-# 📌 Current Progress
+### Tasks Completed
 
-✅ Week 1 Completed – Data Understanding & EDA
+Successfully tested
 
-✅ Week 2 Completed – Feature Engineering & Churn Prediction Models
+- GET /
+- POST /predict
+- POST /batch_predict
 
-✅ Week 3 Completed – Customer Lifetime Value Prediction & FastAPI Deployment
+Swagger URL
 
-🚀 Week 4 – Power BI Dashboard Development & Project Deployment (Next Phase)
+```
+http://localhost:8000/docs
+```
+
+Example Response
+
+```json
+{
+    "Predicted_LTV": 20.62
+}
+```
 
 ---
+
+## Day 6: Git & GitHub Integration
+
+### Tasks Completed
+
+- Initialized Git Repository
+- Added project files
+- Created commits
+- Connected Remote Repository
+- Successfully pushed project to GitHub
+
+Repository
+
+https://github.com/nikhilrana2005/customer-churn-analysis
+
+---
+
+## Day 7: Project Completion
+
+### Final Deliverables
+
+✅ Customer Churn Analysis
+
+✅ Customer Churn Prediction Model
+
+✅ Customer Lifetime Value Prediction
+
+✅ Feature Engineering Pipeline
+
+✅ FastAPI REST API
+
+✅ Batch Prediction API
+
+✅ Swagger Documentation
+
+✅ Docker Containerization
+
+✅ Git Version Control
+
+✅ GitHub Repository
+
+---
+
+# 📊 Final Project Outcome
+
+This project demonstrates an end-to-end Machine Learning workflow covering data preprocessing, exploratory data analysis, feature engineering, predictive modeling, REST API development, Docker containerization, and version control.
+
+The solution enables telecom businesses to:
+
+- Predict customer churn
+- Estimate customer lifetime value
+- Automate predictions using REST APIs
+- Support customer retention strategies
+- Deploy machine learning models in production-ready environments
+
+---
+
+# 🎯 Skills Demonstrated
+
+- Python Programming
+- Data Cleaning
+- Exploratory Data Analysis (EDA)
+- Feature Engineering
+- Machine Learning
+- Regression & Classification
+- FastAPI
+- REST API Development
+- Docker
+- Git & GitHub
+- PostgreSQL
+- Power BI
+- Business Analytics
+
+---
+
+# 🏆 Project Status
+
+# ✅ Project Completed Successfully
+
+**Duration:** 4 Weeks
+
+**Status:** Production Ready
+
+**Deployment:** Docker
+
+**API Documentation:** Swagger UI
+
+**Repository:** GitHub
+
+---
+
+
+# 📌 Project Status
+
+✅ Week 1 Completed
+
+✅ Week 2 Completed
+
+✅ Week 3 Completed
+
+✅ Week 4 Completed
+
+🎉 Project Successfully Completed
+
 
 ## 👨‍💻 Author
 
 **Nikhil Rana**
 
-BCA Student | Data Analytics Enthusiast | Machine Learning Learner
+BCA Graduate | Aspiring Data Analyst | Machine Learning Enthusiast
 
-GitHub:
-https://github.com/nikhilrana2005
+**GitHub:** https://github.com/nikhilrana2005
+
+**LinkedIn:** *  www.linkedin.com/in/nikhilrana4410
+
