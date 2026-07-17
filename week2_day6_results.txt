@@ -1,0 +1,17 @@
+Week 2 Day 6 - XGBoost
+
+Accuracy: 0.7875
+
+Confusion Matrix:
+[[911 122]
+ [177 197]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.84      0.88      0.86      1033
+           1       0.62      0.53      0.57       374
+
+    accuracy                           0.79      1407
+   macro avg       0.73      0.70      0.71      1407
+weighted avg       0.78      0.79      0.78      1407

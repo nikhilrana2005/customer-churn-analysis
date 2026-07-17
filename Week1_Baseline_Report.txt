@@ -1,0 +1,106 @@
+# Customer Churn Prediction & LTV Engine
+
+## Week 1 Baseline Analytics Report
+
+### Project Objective
+
+The objective of this analysis is to identify customer churn patterns using demographic, billing, contract, and service-related data. The insights generated during Week 1 will be used for predictive modeling in Week 2.
+
+### Dataset Overview
+
+* Dataset: Telco Customer Churn Dataset
+* Total Records: 7,043 Customers
+* Total Features: 21 Variables
+* Target Variable: Churn (Yes/No)
+
+---
+
+## Key Findings
+
+### 1. Customer Churn Overview
+
+* A significant portion of customers have churned, indicating a need for proactive retention strategies.
+* Most customers remain active, providing sufficient data for churn prediction modeling.
+
+### 2. Contract Type Analysis
+
+* Customers with Month-to-Month contracts exhibit the highest churn rate.
+* Customers with One-Year and Two-Year contracts are significantly more loyal.
+* Long-term contracts reduce churn risk and improve customer retention.
+
+### 3. Tenure Analysis
+
+* Customers with lower tenure are more likely to churn.
+* Long-tenure customers demonstrate stronger loyalty and lower cancellation rates.
+* Early customer engagement is critical during the first year of service.
+
+### 4. Monthly Charges Analysis
+
+* Customers paying higher monthly charges tend to churn more frequently.
+* Pricing sensitivity appears to influence customer retention decisions.
+* High-value customers should be targeted with personalized retention offers.
+
+### 5. Payment Method Analysis
+
+* Customers using Electronic Check show relatively higher churn rates.
+* Customers using automatic payment methods tend to remain longer with the company.
+* Encouraging auto-pay adoption may improve retention.
+
+### 6. Internet Service Analysis
+
+* Fiber Optic customers show higher churn compared to other internet service categories.
+* Further investigation is required to determine whether pricing, service quality, or competition is driving churn.
+
+### 7. Tech Support Analysis
+
+* Customers without Tech Support churn significantly more than those who subscribe to support services.
+* Technical assistance appears to increase customer satisfaction and retention.
+
+### 8. Online Security Analysis
+
+* Customers without Online Security services are more likely to churn.
+* Security-related services contribute positively to customer retention.
+
+---
+
+## Business Recommendations
+
+### Recommendation 1
+
+Launch targeted retention campaigns for Month-to-Month customers.
+
+### Recommendation 2
+
+Provide onboarding programs and incentives for new customers during their first year.
+
+### Recommendation 3
+
+Offer discounts, loyalty rewards, or bundled plans to customers with high monthly charges.
+
+### Recommendation 4
+
+Promote automatic payment enrollment to reduce churn risk.
+
+### Recommendation 5
+
+Bundle Tech Support and Online Security services with internet plans to improve retention.
+
+### Recommendation 6
+
+Investigate Fiber Optic customer feedback to identify dissatisfaction drivers.
+
+---
+
+## Week 1 Outcome
+
+The exploratory data analysis successfully identified key factors influencing customer churn, including:
+
+* Contract Type
+* Customer Tenure
+* Monthly Charges
+* Payment Method
+* Internet Service Type
+* Tech Support
+* Online Security
+
+These findings provide the foundation for Week 2, where machine learning models (Logistic Regression, Random Forest, and XGBoost) will be developed to predict churn and estimate customer lifetime value (LTV).

@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+metabase.jar
+metabase.db.mv.db
+metabase.db.trace.db
+plugins/
+*.db
+*.trace.db
