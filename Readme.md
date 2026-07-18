@@ -1,652 +1,1128 @@
-# 📊 Telco Customer Churn Analysis
+# 📊 Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 
-## 🚀 Project Overview
+> **An End-to-End Data Analytics, Machine Learning, API Development, Dashboarding, and Docker Deployment Project**
 
-Customer churn is one of the biggest challenges for telecom companies. This project aims to analyze customer behavior, identify churn patterns, engineer meaningful features, and build machine learning models capable of predicting customer churn.
+---
 
-The project follows a structured 4-week roadmap covering data analysis, feature engineering, machine learning, dashboard development, and deployment.
+# 🚀 Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
+
+## 📌 Project Overview
+
+Customer retention has become one of the biggest challenges in the telecommunications industry. Acquiring a new customer costs significantly more than retaining an existing one. Therefore, businesses need intelligent systems capable of identifying customers who are likely to leave while also estimating the future value each customer will bring to the organization.
+
+This project presents a complete **end-to-end Machine Learning and Data Analytics solution** that predicts customer churn risk and estimates **Customer Lifetime Value (LTV)** using historical telecom customer data.
+
+The project follows an industry-standard Data Science workflow starting from raw data collection to deployment of a production-ready REST API using **FastAPI**, interactive business dashboards using **Metabase**, and containerization with **Docker**.
+
+The objective is not only to build accurate machine learning models but also to demonstrate how those models can be integrated into real-world business applications.
+
+---
+
+# 🎯 Business Problem
+
+Telecommunication companies lose millions of dollars every year because customers discontinue their services.
+
+Business teams often struggle to answer questions like:
+
+* Which customers are likely to churn?
+* Which customers generate the highest lifetime revenue?
+* Which customers should receive retention offers?
+* How can customer segmentation improve business decisions?
+
+Traditional reporting systems provide historical insights but fail to predict future customer behavior.
+
+This project solves these problems using predictive analytics and machine learning.
 
 ---
 
 # 🎯 Project Objectives
 
-* Analyze customer churn behavior
-* Identify factors influencing churn
-* Perform feature engineering
-* Build predictive machine learning models
-* Generate business insights and recommendations
-* Develop an interactive Power BI dashboard
-* Support customer retention strategies
+The primary objectives of this project are:
+
+* Build an end-to-end Machine Learning pipeline.
+* Analyze telecom customer behavior.
+* Predict customer churn probability.
+* Predict Customer Lifetime Value (LTV).
+* Develop production-ready REST APIs.
+* Create interactive business dashboards.
+* Deploy the solution using Docker.
+* Follow an industry-standard Data Science workflow.
 
 ---
 
-# 🛠️ Technologies Used
+# ⭐ Key Features
+
+* 📊 Complete Data Analytics Pipeline
+* 🧹 Data Cleaning & Preprocessing
+* 📈 Exploratory Data Analysis (EDA)
+* ⚙️ Feature Engineering
+* 🤖 Customer Churn Prediction
+* 💰 Customer Lifetime Value Prediction
+* 📉 Explainable AI using SHAP
+* 🚀 FastAPI REST API
+* 📦 Batch CSV Prediction
+* 📊 Interactive Metabase Dashboard
+* 🐳 Docker Containerization
+* 🔄 Production Ready Workflow
+* 💻 Git & GitHub Version Control
+
+---
+
+# 🏗 Project Architecture
+
+```text
+                         IBM Telco Customer Churn Dataset
+                                        │
+                                        ▼
+                           Data Cleaning & Preprocessing
+                                        │
+                                        ▼
+                          Exploratory Data Analysis (EDA)
+                                        │
+                                        ▼
+                             Feature Engineering
+                                        │
+                                        ▼
+                  Customer Churn Prediction (Classification)
+                                        │
+                                        ▼
+                 Customer Lifetime Value Prediction (Regression)
+                                        │
+                                        ▼
+                         Model Serialization (.pkl Files)
+                                        │
+                                        ▼
+                          FastAPI REST API Development
+                                        │
+                                        ▼
+                        Batch Prediction & Single Prediction
+                                        │
+                                        ▼
+                          Metabase Business Dashboard
+                                        │
+                                        ▼
+                           Docker Container Deployment
+```
+
+---
+
+# 🔄 Project Workflow
+
+```text
+Raw Dataset
+      │
+      ▼
+Load Dataset
+      │
+      ▼
+Data Cleaning
+      │
+      ▼
+Exploratory Data Analysis
+      │
+      ▼
+Feature Engineering
+      │
+      ▼
+Machine Learning Models
+      │
+      ▼
+Model Evaluation
+      │
+      ▼
+Customer Lifetime Value Prediction
+      │
+      ▼
+FastAPI REST API
+      │
+      ▼
+Swagger Documentation
+      │
+      ▼
+Metabase Dashboard
+      │
+      ▼
+Docker Deployment
+```
+
+---
+
+# 📂 Dataset Information
+
+**Dataset Name**
+
+IBM Telco Customer Churn Dataset
+
+The dataset contains information about telecom customers including:
+
+* Customer Demographics
+* Contract Information
+* Internet Services
+* Billing Details
+* Payment Methods
+* Customer Tenure
+* Monthly Charges
+* Total Charges
+* Churn Status
+
+### Dataset Statistics
+
+* Total Records: **7043**
+* Features: **21 Original Columns**
+* Engineered Features Added
+* Classification Target:
+
+  * Churn
+* Regression Target:
+
+  * Customer Lifetime Value (LTV)
+
+---
+
+# 🧹 Data Preprocessing
+
+Before building the machine learning models, several preprocessing techniques were applied.
+
+### Data Cleaning
+
+* Removed missing values
+* Converted TotalCharges into numeric format
+* Handled blank records
+* Removed duplicate records
+
+### Data Transformation
+
+* Label Encoding
+* Feature Scaling
+* Numerical Conversion
+* Boolean Conversion
+
+### Data Validation
+
+* Null Value Detection
+* Data Type Verification
+* Outlier Checking
+
+---
+
+# 📊 Exploratory Data Analysis (EDA)
+
+Several exploratory analyses were performed to understand customer behavior.
+
+The analysis included:
+
+* Customer Distribution
+* Churn Distribution
+* Monthly Charges Analysis
+* Total Charges Analysis
+* Contract Type Analysis
+* Internet Service Analysis
+* Payment Method Analysis
+* Senior Citizen Analysis
+* Gender Analysis
+* Correlation Analysis
+
+These visualizations helped identify the major factors influencing customer churn.
+
+---
+
+# ⚙️ Feature Engineering
+
+To improve prediction accuracy, several business-driven features were created.
+
+### Engineered Features
+
+### ContractRisk
+
+Measures the customer's contractual risk level.
+
+### RevenuePerMonth
+
+Average revenue generated by the customer every month.
+
+### ChargeRatio
+
+Ratio between total charges and monthly charges.
+
+### HighValueCustomer
+
+Identifies premium customers based on revenue.
+
+These engineered features significantly improved the predictive capability of the machine learning models.
+
+---
+
+# 💻 Technology Stack
+
+## Programming Language
 
 * Python
+
+## Database
+
+* PostgreSQL
+
+## Machine Learning
+
 * Pandas
 * NumPy
-* PostgreSQL
 * Scikit-Learn
 * XGBoost
 * SHAP
-* Power BI
-* Git & GitHub
+
+## API Development
+
+* FastAPI
+* Uvicorn
+
+## Dashboard
+
+* Metabase
+
+## Deployment
+
+* Docker
+
+## Version Control
+
+* Git
+* GitHub
+
+## Development Tools
+
+* VS Code
+* Jupyter Notebook
+* Swagger UI
 
 ---
 
-# 📅 Week 1: Data Understanding & Exploratory Data Analysis (EDA)
+# 📁 Project Structure
 
-## Objectives
+```text
+customer-churn-analysis/
+│
+├── app.py
+├── Dockerfile
+├── requirements.txt
+├── feature_columns.pkl
+├── scaler.pkl
+├── linear_regression_ltv.pkl
+├── random_forest_ltv.pkl
+│
+├── screenshots/
+│   ├── swagger_ui.png
+│   ├── prediction_api.png
+│   ├── batch_prediction.png
+│   ├── metabase_dashboard.png
+│   └── docker_container.png
+│
+├── week1_*
+├── week2_*
+├── week3_*
+├── week4_*
+│
+├── README.md
+└── Telco-Customer-Churn.csv
+```
 
-* Understand dataset structure
-* Clean and preprocess data
-* Perform exploratory data analysis
-* Identify churn patterns
-* Generate initial business insights
+---
 
-## Tasks Completed
+# 📅 Development Timeline
 
-### Day 1
+The project was completed in four structured phases.
 
-* PostgreSQL installation
-* Database creation
-* Dataset loading
-* Database connectivity setup
+### ✅ Week 1
 
-### Day 2
-
-* Data quality assessment
-* Missing value identification
-* Data type validation
-
-### Day 3
-
-* Data cleaning
-* Handling missing values
-* Data transformation
-
-### Day 4
-
+* Data Collection
+* PostgreSQL Integration
+* Data Cleaning
 * Exploratory Data Analysis
-* Statistical summaries
-* Distribution analysis
+* Baseline Report
 
-### Day 5
+### ✅ Week 2
 
-* Churn analysis
-* Customer segmentation
-* Service usage analysis
+* Feature Engineering
+* Logistic Regression
+* Random Forest
+* XGBoost
+* SHAP Explainability
 
-### Day 6
+### ✅ Week 3
 
-* Encoding categorical variables
-* Data preparation for ML
+* Customer Lifetime Value Prediction
+* Linear Regression
+* Random Forest Regression
+* Model Serialization
 
-### Day 7
+### ✅ Week 4
 
-* Week 1 report preparation
-* Business insights generation
+* FastAPI Development
+* Batch Prediction API
+* Metabase Dashboard
+* Docker Deployment
+* GitHub Documentation
 
----
+# 🤖 Machine Learning Models
 
-## Key Insights from Week 1
-
-* Customer churn rate is approximately 26.6%.
-* Customers with month-to-month contracts show higher churn rates.
-* Fiber Optic internet users tend to churn more frequently.
-* Electronic Check payment users exhibit higher churn behavior.
-* Customers with shorter tenure are more likely to leave.
-* Additional services such as Online Security and Tech Support reduce churn probability.
-
----
-
-# 📅 Week 2: Feature Engineering & Machine Learning
-
-## Objectives
-
-* Create meaningful business features
-* Train predictive models
-* Evaluate model performance
-* Identify churn drivers
+The project uses both **classification** and **regression** algorithms to solve two different business problems.
 
 ---
 
-## Day 1: Feature Engineering
+# 1️⃣ Customer Churn Prediction
 
-Created:
+Customer churn prediction is a **binary classification problem**, where the model predicts whether a customer is likely to leave the telecom service.
 
-* RevenuePerMonth
-* ChargeRatio
-* HighValueCustomer
-
-Outcome:
-Enhanced customer profiling and spending analysis.
-
----
-
-## Day 2: Customer Segmentation
-
-Created:
-
-* TenureGroup
-* ContractRisk
-* CustomerLifetimeValue
-
-Outcome:
-Improved customer segmentation and risk assessment.
-
----
-
-## Day 3: Advanced Feature Engineering
-
-Created:
-
-* ChargesPerTenure
-* ServiceUsageScore
-* RiskCategory
-
-Outcome:
-Prepared final machine-learning-ready dataset.
-
-Final Dataset Shape:
+Target Variable:
 
 ```text
-7032 Rows × 43 Features
+Churn
+
+0 → Customer Will Stay
+1 → Customer Will Churn
 ```
+
+The following machine learning models were trained and evaluated:
 
 ---
 
-## Day 4: Logistic Regression
+## Logistic Regression
 
-### Results
+Logistic Regression was used as the baseline classification model.
 
-Accuracy: 80.38%
+### Advantages
 
-Confusion Matrix:
+* Simple
+* Fast
+* Easy to Interpret
+* Good Baseline Performance
+
+---
+
+## Random Forest Classifier
+
+Random Forest combines multiple decision trees to improve prediction accuracy.
+
+### Advantages
+
+* Handles Non-linear Data
+* Reduces Overfitting
+* Better Generalization
+
+---
+
+## XGBoost Classifier
+
+XGBoost was implemented as the final classification model due to its superior predictive capability.
+
+### Advantages
+
+* High Accuracy
+* Faster Training
+* Handles Complex Relationships
+* Excellent Feature Importance Analysis
+
+---
+
+# 📈 Model Comparison
+
+The classification models were compared based on overall predictive performance.
+
+| Model               | Purpose                    |
+| ------------------- | -------------------------- |
+| Logistic Regression | Baseline Model             |
+| Random Forest       | Ensemble Learning          |
+| XGBoost             | Final Classification Model |
+
+---
+
+# 🔍 Explainable AI (SHAP)
+
+To understand how the machine learning model makes predictions, **SHAP (SHapley Additive Explanations)** was used.
+
+SHAP helps identify:
+
+* Most Important Features
+* Feature Contribution
+* Model Transparency
+* Business Interpretation
+
+Top influential features included:
+
+* Contract Risk
+* Monthly Charges
+* Total Charges
+* Tenure
+* Revenue Per Month
+
+---
+
+# 💰 Customer Lifetime Value Prediction
+
+Customer Lifetime Value (LTV) prediction is treated as a **regression problem**.
+
+Instead of predicting churn, regression models estimate how much revenue a customer is expected to generate over time.
+
+---
+
+## Linear Regression
+
+Linear Regression served as the baseline regression model.
+
+### Advantages
+
+* Simple
+* Fast
+* Easy Interpretation
+
+---
+
+## Random Forest Regressor
+
+Random Forest Regression was selected as the final regression model because it captures complex customer behavior more effectively.
+
+### Advantages
+
+* Higher Prediction Accuracy
+* Handles Non-linear Relationships
+* Robust Against Outliers
+
+---
+
+# 📦 Model Serialization
+
+After training, the models were saved for deployment.
+
+Saved Files:
 
 ```text
-[[916 117]
- [159 215]]
+linear_regression_ltv.pkl
+
+random_forest_ltv.pkl
+
+feature_columns.pkl
+
+scaler.pkl
 ```
 
-Key Finding:
-
-* Best performing model among all tested models.
+These files are loaded automatically by the FastAPI application during runtime.
 
 ---
 
-## Day 5: Random Forest
+# 🌐 REST API Development
 
-### Results
+A production-ready REST API was developed using **FastAPI**.
 
-Accuracy: 78.54%
+FastAPI provides:
 
-Confusion Matrix:
+* High Performance
+* Automatic Validation
+* Interactive Swagger Documentation
+* JSON Response Support
 
-```text
-[[918 115]
- [187 187]]
+---
+
+# 📌 API Endpoints
+
+## Home Endpoint
+
+```http
+GET /
 ```
 
-Key Finding:
+Purpose:
 
-* Good performance but lower than Logistic Regression.
-
----
-
-## Day 6: XGBoost
-
-### Results
-
-Accuracy: 78.75%
-
-Confusion Matrix:
-
-```text
-[[911 122]
- [177 197]]
-```
-
-Top Features:
-
-* ContractRisk
-* InternetService_Fiber optic
-* Contract_Two year
-* Contract_One year
-* tenure
-* OnlineSecurity_Yes
-* PaymentMethod_Electronic check
-
----
-
-## Day 7: Model Comparison
-
-| Model               | Accuracy |
-| ------------------- | -------- |
-| Logistic Regression | 80.38%   |
-| Random Forest       | 78.54%   |
-| XGBoost             | 78.75%   |
-
-### Best Model
-
-🏆 Logistic Regression
-
-Reason:
-
-* Highest Accuracy
-* Highest Recall
-* Highest F1 Score
-
----
-
-# 📈 Business Insights
-
-### Major Churn Drivers
-
-1. Contract Type
-2. Internet Service Type
-3. Customer Tenure
-4. Payment Method
-5. Online Security Services
-6. Technical Support Services
-
-### Recommendations
-
-* Promote long-term contracts.
-* Improve retention strategies for Fiber Optic users.
-* Encourage Auto-Pay payment methods.
-* Offer bundled security and support services.
-* Focus on retaining new customers during early tenure periods.
-
----
-
-
-
-# 📅 Week 3: Customer Lifetime Value (LTV) Prediction & FastAPI Deployment
-
-## Objectives
-
-* Prepare Customer Lifetime Value (LTV) dataset
-* Build regression models for LTV prediction
-* Evaluate regression performance
-* Deploy trained model using FastAPI
-* Develop REST APIs for single and batch predictions
-* Create API documentation using Swagger UI
-
----
-
-## Day 1: Customer Lifetime Value (LTV) Preparation
-
-### Tasks Completed
-
-* Created Customer Lifetime Value (LTV) target variable
-* Prepared regression-ready dataset
-* Verified data quality
-* Saved processed dataset for model training
-
-### Dataset Summary
-
-**Rows:** 7032
-
-**Features:** 44
-
----
-
-## Day 2: Linear Regression Model
-
-### Results
-
-| Metric   | Value  |
-| -------- | ------ |
-| MAE      | 0.00   |
-| RMSE     | 0.00   |
-| R² Score | 1.0000 |
-
-### Outcome
-
-* Successfully trained a Linear Regression model for Customer Lifetime Value prediction.
-* Generated prediction results and saved the trained model.
-
----
-
-## Day 3: Random Forest Regression
-
-### Results
-
-| Metric   | Value  |
-| -------- | ------ |
-| MAE      | 1.19   |
-| RMSE     | 2.17   |
-| R² Score | 1.0000 |
-
-### Outcome
-
-* Built a Random Forest Regression model.
-* Compared regression performance with Linear Regression.
-* Saved trained model using Joblib.
-* Generated prediction dataset for evaluation.
-
----
-
-## Day 4: FastAPI Project Setup
-
-### Tasks Completed
-
-* Installed FastAPI
-* Installed Uvicorn
-* Created REST API application
-* Loaded trained Machine Learning model
-* Verified API functionality
-* Configured Swagger Documentation
-
-### Deliverables
-
-* FastAPI application
-* Interactive API documentation
-* Model loading system
-
----
-
-## Day 5: Single Customer Prediction API
-
-### Features Implemented
-
-* Created `/predict` endpoint
-* Accepted customer information through JSON
-* Performed Customer Lifetime Value prediction
-* Returned prediction as JSON response
-* Tested successfully using Swagger UI
-
-### Sample API Response
-
-```json
-{
-    "Predicted_LTV": 20.62
-}
-```
-
----
-
-## Day 6: Batch Prediction API
-
-### Features Implemented
-
-* Created `/batch_predict` endpoint
-* CSV file upload support
-* Batch prediction for multiple customers
-* Generated prediction output file
-* Successfully processed all 7032 customer records
-
-### Output
-
-* batch_predictions.csv
-
----
-
-## Day 7: API Testing & Deployment Readiness
-
-### Tasks Completed
-
-* Tested all REST API endpoints
-* Added file validation
-* Added exception handling
-* Enabled downloadable CSV output
-* Completed API documentation
-* Verified end-to-end workflow
-
-### API Endpoints
-
-| Method | Endpoint       | Description                        |
-| ------ | -------------- | ---------------------------------- |
-| GET    | /              | API Health Check                   |
-| POST   | /predict       | Predict LTV for a Single Customer  |
-| POST   | /batch_predict | Predict LTV for Multiple Customers |
-
----
-
-# 📈 Week 3 Business Impact
-
-The Customer Lifetime Value prediction system enables businesses to estimate the future value of each customer, helping management prioritize retention efforts and marketing investments.
-
-### Benefits
-
-* Identify high-value customers
-* Improve customer retention strategy
-* Support personalized marketing campaigns
-* Estimate future customer revenue
-* Automate prediction through REST APIs
-* Enable integration with web and dashboard applications
-
----
-
-# 🚀 Week 3 Achievements
-
-✅ Customer Lifetime Value Dataset Created
-
-✅ Linear Regression Model Developed
-
-✅ Random Forest Regression Model Developed
-
-✅ FastAPI REST API Built
-
-✅ Single Customer Prediction API
-
-✅ Batch Prediction API
-
-✅ Swagger Documentation
-
-✅ Model Deployment Ready
-
-
-
-
-
-
----
-
-# 📅 Week 4: Docker Containerization, GitHub Integration & Deployment
-
-## Objectives
-
-- Containerize the FastAPI application using Docker
-- Build and manage Docker images
-- Run the application inside Docker containers
-- Test API endpoints through Swagger UI
-- Version control using Git & GitHub
-- Prepare the project for deployment
-
----
-
-## Day 1: Docker Setup
-
-### Tasks Completed
-
-- Installed Docker Desktop
-- Configured Docker Engine
-- Verified Docker installation
-- Pulled the official Python Docker image
-
----
-
-## Day 2: Dockerfile Creation
-
-### Tasks Completed
-
-- Created Dockerfile
-- Configured Python runtime
-- Installed project dependencies
-- Exposed FastAPI port
-
----
-
-## Day 3: Docker Image Build
-
-### Tasks Completed
-
-- Built Docker Image
-- Verified image creation
-- Managed Docker images
-
-Image Name:
-
-```
-churn-api
-```
-
----
-
-## Day 4: Docker Container Execution
-
-### Tasks Completed
-
-- Created Docker container
-- Mapped application port
-- Successfully launched FastAPI inside Docker
-
-Container Status:
-
-✅ Running Successfully
-
----
-
-## Day 5: API Testing using Swagger
-
-### Tasks Completed
-
-Successfully tested
-
-- GET /
-- POST /predict
-- POST /batch_predict
-
-Swagger URL
-
-```
-http://localhost:8000/docs
-```
+Checks whether the API is running successfully.
 
 Example Response
 
 ```json
 {
-    "Predicted_LTV": 20.62
+    "message":"Customer Lifetime Value Prediction API Running"
 }
 ```
 
 ---
 
-## Day 6: Git & GitHub Integration
+# Single Prediction Endpoint
 
-### Tasks Completed
+```http
+POST /predict
+```
 
-- Initialized Git Repository
-- Added project files
-- Created commits
-- Connected Remote Repository
-- Successfully pushed project to GitHub
+Purpose:
 
-Repository
+Predict Customer Lifetime Value for a single customer.
 
-https://github.com/nikhilrana2005/customer-churn-analysis
+Input:
 
----
+JSON
 
-## Day 7: Project Completion
+Example
 
-### Final Deliverables
+```json
+{
+  "SeniorCitizen":0,
+  "Partner":1,
+  "Dependents":0,
+  "tenure":12,
+  "PhoneService":1,
+  "PaperlessBilling":1,
+  "MonthlyCharges":75.5,
+  "TotalCharges":900,
+  "ContractRisk":1,
+  "HighValueCustomer":0,
+  "RevenuePerMonth":75.5,
+  "ChargeRatio":12,
+  "Churn":0
+}
+```
 
-✅ Customer Churn Analysis
+Response
 
-✅ Customer Churn Prediction Model
-
-✅ Customer Lifetime Value Prediction
-
-✅ Feature Engineering Pipeline
-
-✅ FastAPI REST API
-
-✅ Batch Prediction API
-
-✅ Swagger Documentation
-
-✅ Docker Containerization
-
-✅ Git Version Control
-
-✅ GitHub Repository
-
----
-
-# 📊 Final Project Outcome
-
-This project demonstrates an end-to-end Machine Learning workflow covering data preprocessing, exploratory data analysis, feature engineering, predictive modeling, REST API development, Docker containerization, and version control.
-
-The solution enables telecom businesses to:
-
-- Predict customer churn
-- Estimate customer lifetime value
-- Automate predictions using REST APIs
-- Support customer retention strategies
-- Deploy machine learning models in production-ready environments
+```json
+{
+   "Predicted_LTV":20.62
+}
+```
 
 ---
 
-# 🎯 Skills Demonstrated
+# Batch Prediction Endpoint
 
-- Python Programming
-- Data Cleaning
-- Exploratory Data Analysis (EDA)
-- Feature Engineering
-- Machine Learning
-- Regression & Classification
-- FastAPI
-- REST API Development
-- Docker
-- Git & GitHub
-- PostgreSQL
-- Power BI
-- Business Analytics
+```http
+POST /batch_predict
+```
 
----
+Purpose:
 
-# 🏆 Project Status
+Upload an entire CSV file and receive predictions for every customer.
 
-# ✅ Project Completed Successfully
+Supported Format
 
-**Duration:** 4 Weeks
+CSV
 
-**Status:** Production Ready
+Output
 
-**Deployment:** Docker
-
-**API Documentation:** Swagger UI
-
-**Repository:** GitHub
+CSV with Predicted LTV Column
 
 ---
 
+# 📖 Swagger Documentation
 
-# 📌 Project Status
+FastAPI automatically generates API documentation.
 
-✅ Week 1 Completed
+Access Swagger UI:
 
-✅ Week 2 Completed
+```text
+http://localhost:8000/docs
+```
 
-✅ Week 3 Completed
+Features
 
-✅ Week 4 Completed
+* Interactive API Testing
+* JSON Validation
+* Request & Response Examples
+* Live Endpoint Testing
 
-🎉 Project Successfully Completed
+---
 
+# 🐳 Docker Deployment
 
-## 👨‍💻 Author
+To ensure portability and consistency, the complete application was containerized using Docker.
 
-**Nikhil Rana**
+---
 
-BCA Graduate | Aspiring Data Analyst | Machine Learning Enthusiast
+## Build Docker Image
 
-**GitHub:** https://github.com/nikhilrana2005
+```bash
+docker build -t churn-api .
+```
 
-**LinkedIn:** *  www.linkedin.com/in/nikhilrana4410
+---
 
-t
+## Run Docker Container
+
+```bash
+docker run -d -p 8000:8000 --name churn-container churn-api
+```
+
+---
+
+## Check Running Containers
+
+```bash
+docker ps
+```
+
+---
+
+## View Container Logs
+
+```bash
+docker logs churn-container
+```
+
+---
+
+# 📊 Business Intelligence Dashboard
+
+Interactive dashboards were developed using **Metabase** to provide business users with valuable insights.
+
+The dashboard enables decision-makers to analyze customer behavior without writing SQL queries.
+
+---
+
+# Dashboard Features
+
+The dashboard contains multiple visualizations including:
+
+* Total Customers
+* Churn Rate
+* Monthly Charges Distribution
+* Contract Type Distribution
+* Internet Service Analysis
+* Payment Method Distribution
+* Senior Citizen Analysis
+* Gender Distribution
+* Revenue Insights
+* Customer Segmentation
+
+These visualizations help stakeholders identify high-risk customer groups and improve retention strategies.
+
+---
+
+# 📷 Project Screenshots
+
+## 1️⃣ Swagger UI
+
+Interactive API documentation generated automatically by FastAPI.
+
+```text
+screenshots/swagger_ui.png
+```
+
+---
+
+## 2️⃣ Customer Lifetime Value Prediction API
+
+Demonstrates successful prediction using the `/predict` endpoint.
+
+```text
+screenshots/prediction_api.png
+```
+
+---
+
+## 3️⃣ Batch Prediction API
+
+Shows batch CSV upload and prediction generation using `/batch_predict`.
+
+```text
+screenshots/batch_prediction.png
+```
+
+---
+
+## 4️⃣ Metabase Dashboard
+
+Business dashboard displaying customer insights and KPIs.
+
+```text
+screenshots/metabase_dashboard.png
+```
+
+---
+
+## 5️⃣ Docker Container
+
+Docker Desktop showing the running FastAPI application container.
+
+```text
+screenshots/docker_container.png
+```
+
+---
+
+# 📊 Business Benefits
+
+This solution enables telecom companies to:
+
+* Predict customer churn before it occurs.
+* Identify high-value customers.
+* Improve customer retention strategies.
+* Optimize marketing campaigns.
+* Reduce customer acquisition costs.
+* Increase overall profitability.
+
+# 💻 Installation Guide
+
+Follow the steps below to set up the project on your local machine.
+
+---
+
+# 📋 Prerequisites
+
+Make sure the following software is installed:
+
+* Python 3.11+
+* PostgreSQL
+* Docker Desktop
+* Git
+* Visual Studio Code
+
+---
+
+# 📥 Clone the Repository
+
+```bash
+git clone https://github.com/nikhilrana2005/customer-churn-analysis.git
+```
+
+Navigate to the project folder:
+
+```bash
+cd customer-churn-analysis
+```
+
+---
+
+# 🐍 Create Virtual Environment
+
+Windows
+
+```bash
+python -m venv venv
+```
+
+Activate Virtual Environment
+
+```bash
+venv\Scripts\activate
+```
+
+---
+
+# 📦 Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Or install manually
+
+```bash
+pip install fastapi uvicorn pandas numpy scikit-learn joblib xgboost shap python-multipart
+```
+
+---
+
+# ▶️ Run FastAPI Application
+
+```bash
+uvicorn app:app --reload
+```
+
+The API will start on:
+
+```text
+http://127.0.0.1:8000
+```
+
+Swagger Documentation:
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+---
+
+# 🐳 Docker Setup
+
+## Build Docker Image
+
+```bash
+docker build -t churn-api .
+```
+
+---
+
+## Run Docker Container
+
+```bash
+docker run -d -p 8000:8000 --name churn-container churn-api
+```
+
+---
+
+## Verify Running Container
+
+```bash
+docker ps
+```
+
+---
+
+## Stop Container
+
+```bash
+docker stop churn-container
+```
+
+---
+
+## Remove Container
+
+```bash
+docker rm churn-container
+```
+
+---
+
+# 📂 Important Project Files
+
+| File                      | Description             |
+| ------------------------- | ----------------------- |
+| app.py                    | FastAPI Application     |
+| Dockerfile                | Docker Configuration    |
+| feature_columns.pkl       | Feature Order           |
+| scaler.pkl                | Feature Scaler          |
+| linear_regression_ltv.pkl | Linear Regression Model |
+| random_forest_ltv.pkl     | Random Forest LTV Model |
+| Telco-Customer-Churn.csv  | Original Dataset        |
+| README.md                 | Project Documentation   |
+
+---
+
+# 📊 Project Results
+
+The project successfully demonstrates an end-to-end analytics workflow.
+
+### Achievements
+
+* Successfully loaded telecom customer dataset.
+* Performed complete Exploratory Data Analysis (EDA).
+* Created business-oriented engineered features.
+* Built Customer Churn Prediction models.
+* Built Customer Lifetime Value prediction models.
+* Saved trained machine learning models.
+* Developed REST APIs using FastAPI.
+* Implemented Batch CSV Prediction.
+* Built interactive dashboards using Metabase.
+* Containerized the application using Docker.
+* Published the complete project on GitHub.
+
+---
+
+# 📚 Skills Demonstrated
+
+This project demonstrates practical experience in:
+
+### Data Analytics
+
+* Data Cleaning
+* Data Wrangling
+* Exploratory Data Analysis
+* Feature Engineering
+
+### Machine Learning
+
+* Classification
+* Regression
+* Model Evaluation
+* Explainable AI (SHAP)
+
+### Backend Development
+
+* FastAPI
+* REST API Development
+* JSON Request Handling
+
+### Deployment
+
+* Docker
+* API Deployment
+* Containerization
+
+### Database
+
+* PostgreSQL
+
+### Business Intelligence
+
+* Metabase Dashboard
+* Business Reporting
+* KPI Visualization
+
+### Version Control
+
+* Git
+* GitHub
+
+---
+
+# 🎓 Learning Outcomes
+
+During this project, the following concepts were learned and implemented:
+
+* End-to-End Data Science Workflow
+* Customer Churn Prediction
+* Customer Lifetime Value Prediction
+* Feature Engineering
+* Machine Learning Model Building
+* Model Serialization
+* Explainable AI
+* REST API Development
+* Interactive API Documentation
+* Docker Deployment
+* Dashboard Development
+* Production-Level Project Organization
+
+---
+
+# 🚀 Future Enhancements
+
+Future improvements planned for this project include:
+
+* User Authentication using JWT
+* Role-Based Access Control
+* Streamlit Frontend
+* Power BI Dashboard Integration
+* AWS Cloud Deployment
+* Azure Deployment
+* CI/CD Pipeline using GitHub Actions
+* Kubernetes Deployment
+* Model Monitoring
+* Automatic Model Retraining
+* Real-Time Prediction Service
+* Database Integration for Prediction Storage
+
+---
+
+# 💼 Business Applications
+
+This solution can be used by:
+
+* Telecommunications Companies
+* Banking Sector
+* Insurance Companies
+* Subscription-Based Businesses
+* SaaS Companies
+* E-Commerce Platforms
+
+The predictive insights help organizations:
+
+* Reduce Customer Churn
+* Improve Customer Retention
+* Increase Customer Satisfaction
+* Optimize Marketing Campaigns
+* Improve Revenue Forecasting
+* Identify High-Value Customers
+
+---
+
+# 🌟 Highlights
+
+* ✔ End-to-End Machine Learning Project
+* ✔ Industry-Level Folder Structure
+* ✔ Production-Ready REST API
+* ✔ Dockerized Application
+* ✔ Interactive Swagger Documentation
+* ✔ Business Dashboard
+* ✔ GitHub Portfolio Ready
+* ✔ Real-World Business Use Case
+
+---
+
+# 👨‍💻 Author
+
+## Nikhil Rana
+
+**Aspiring Data Analyst | Machine Learning Enthusiast | Python Developer**
+
+### Connect with Me
+
+* **GitHub:** https://github.com/nikhilrana2005
+* **LinkedIn:** *(Add your LinkedIn Profile URL)*
+
+---
+
+# 🤝 Contributions
+
+Contributions, suggestions, and improvements are welcome.
+
+If you would like to improve this project:
+
+1. Fork the repository.
+2. Create a new feature branch.
+3. Commit your changes.
+4. Submit a Pull Request.
+
+---
+
+# 📄 License
+
+This project is developed for **educational, learning, and portfolio purposes**.
+
+Feel free to use and modify the project for learning and personal development.
+
+---
+
+# ⭐ Support
+
+If you found this project helpful, please consider giving it a **⭐ Star** on GitHub.
+
+Your support motivates me to build more real-world Data Analytics and Machine Learning projects.
+
+---
+
+# 🎉 Conclusion
+
+The **Customer Churn Prediction & Customer Lifetime Value (LTV) Engine** demonstrates a complete end-to-end Data Analytics and Machine Learning workflow—from raw data processing and feature engineering to predictive modeling, REST API development, business intelligence dashboards, and Docker-based deployment.
+
+This project showcases practical skills in **Python, PostgreSQL, Machine Learning, FastAPI, Metabase, Docker, Git, and GitHub**, making it a strong portfolio project that reflects industry-standard practices and real-world business problem solving.
+
+# 👨‍💻 About the Author
+
+## Nikhil Rana
+
+**Aspiring Data Analyst | Machine Learning Enthusiast | Python Developer**
+
+I am a passionate Data Analyst with a strong interest in Data Analytics, Machine Learning, Business Intelligence, and AI-driven solutions. I enjoy transforming raw data into meaningful insights and developing end-to-end data-driven applications that solve real-world business problems.
+
+This project reflects my practical skills in:
+
+* 📊 Data Analytics
+* 🤖 Machine Learning
+* 🐍 Python Programming
+* ⚡ FastAPI
+* 🗄 PostgreSQL
+* 📈 Data Visualization
+* 📊 Metabase Dashboarding
+* 🐳 Docker
+* 🌐 Git & GitHub
+
+I am continuously learning modern technologies and building real-world projects to strengthen my expertise in Data Analytics and Machine Learning.
+
+---
+
+## 📬 Connect with Me
+
+**👤 Name:** Nikhil Rana
+
+**💻 GitHub:** https://github.com/nikhilrana2005
+
+**🔗 LinkedIn:** www.linkedin.com/in/nikhilrana4410
+
+**📧 Email:** nr5887253@gmail.com
+
+---
+
+# ⭐ Thank You
+
+Thank you for taking the time to explore this project.
+
+If you found this repository helpful or interesting, please consider giving it a ⭐ **Star** on GitHub. Your support motivates me to continue building impactful Data Analytics and Machine Learning projects.
+
+I welcome feedback, suggestions, and collaboration opportunities. Feel free to connect with me to discuss data analytics, machine learning, or exciting project ideas.
+
+**Happy Coding! 🚀**
