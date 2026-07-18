@@ -1042,7 +1042,7 @@ The predictive insights help organizations:
 ### Connect with Me
 
 * **GitHub:** https://github.com/nikhilrana2005
-* **LinkedIn:** *(Add your LinkedIn Profile URL)*
+* **LinkedIn:** www.linkedin.com/in/nikhilrana4410
 
 ---
 
